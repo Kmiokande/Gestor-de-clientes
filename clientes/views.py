@@ -1,6 +1,7 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from .models import Person
 
 # Create your views here.
 def persons_list(request):
-    return render(request, 'index.html')
+    persons = Person.objects.all()
+    return render(request, 'person.html', {'persons': persons})
