@@ -7,7 +7,7 @@ class Person(models.Model):
     age = models.IntegerField()
     salary = models.DecimalField(max_digits=5, decimal_places=2)
     bio = models.TextField()
-    photo = models.ImageField(blank=True, null=True)
+    photo = models.ImageField(upload_to='clients_photos', blank=True, null=True)
 
     def __str__(self):
         name = self.first_name + ' ' + self.last_name
